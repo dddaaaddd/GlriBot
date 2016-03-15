@@ -52,10 +52,12 @@ function msg_valid(msg)
   end
 
   -- Before bot was started
-  if msg.date < now then
-    print('\27[36mNot valid: old msg\27[39m')
-    return false
-  end
+ --if msg.out then
+   -- print('\27[36mNot valid: msg from us\27[39m')
+   -- return false
+ -- end
+
+
 
   if msg.unread == 0 then
     print('\27[36mNot valid: readed\27[39m')
@@ -72,10 +74,11 @@ function msg_valid(msg)
     return false
   end
 
-  if msg.from.id == our_id then
-    print('\27[36mNot valid: Msg from our id\27[39m')
-    return false
-  end
+ -- if msg.from.id == our_id then
+ --   print('\27[36mNot valid: Msg from our id\27[39m')
+   -- return false
+  --end
+
 
   if msg.to.type == 'encr_chat' then
     print('\27[36mNot valid: Encrypted chat\27[39m')
